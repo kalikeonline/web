@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each user can read and write only their own profile (name, photo, etc.)
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+
+      // Courses / Bits the user has paid for.
+      // Read-only for the user: only the payment server can write here, so nobody can fake a purchase.
+      match /purchases/{pid} {
+        allow read: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
+    // Public reviews: anyone can read, each user can write only their own (one per person)
+    match /reviews/{uid} {
+      allow read: if true;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && request.resource.data.text is string
+        && request.resource.data.text.size() >= 10 && request.resource.data.text.size() <= 400;
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
