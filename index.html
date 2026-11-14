@@ -1393,6 +1393,70 @@ html body .ks-scroll.ks-scroll>.rv-empty{width:100%}
 @media(max-width:700px){.u-steps{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.u-steps li{flex:0 0 62%;scroll-snap-align:start}}
 @media(prefers-reduced-motion:reduce){.ks-scroll{scroll-behavior:auto}.flow::after,.play,.hero-stage::before,.hero-stage::after,.final::before,.ks-bar i.run{animation:none}.learn-panel>*,.rv-card,.hero .wrap>div>*{animation:none!important}}
 </style>
+<style id="lx17">
+.hero-stage{min-height:560px}
+.hs-aura{position:absolute;border-radius:50%;filter:blur(54px);width:78%;aspect-ratio:1;right:-4%;bottom:0;opacity:0;transition:opacity 1s ease;pointer-events:none}
+.hs-aura.on{opacity:.85}
+.hs-aura.a0{background:radial-gradient(circle,rgba(47,107,255,.75),transparent 68%)}
+.hs-aura.a1{background:radial-gradient(circle,rgba(255,59,87,.7),transparent 68%)}
+.hs-aura.a2{background:radial-gradient(circle,rgba(198,255,0,.55),transparent 68%)}
+.hs-person{right:-6%;bottom:0;width:86%;z-index:2}
+.hs-card{position:absolute;left:-6%;bottom:6%;width:74%;z-index:3;aspect-ratio:760/540;rotate:-5deg;animation:hsFloat 6s ease-in-out infinite;filter:drop-shadow(0 16px 30px rgba(0,0,0,.7))}
+.hs-card img{position:absolute;left:0;bottom:0;width:100%;height:auto;opacity:0;scale:.92;transition:opacity .7s ease,scale .7s cubic-bezier(.2,.8,.2,1)}
+.hs-card img.on{opacity:1;scale:1}
+.hs-chip{right:4%;top:6%;z-index:4;font-family:var(--head);font-weight:800;font-size:.9rem;background:#000;color:#fff;border:2px solid var(--yellow);border-radius:999px;padding:8px 16px;box-shadow:0 0 22px rgba(255,227,26,.45);animation:hsFloat 5s ease-in-out infinite;animation-delay:-2s}
+@media(max-width:900px){.hero-stage{min-height:440px;max-width:520px}.hs-card{left:-2%;width:70%}}
+@media(prefers-reduced-motion:reduce){.hs-card,.hs-chip{animation:none}.hs-card img{transition:none}}
+</style>
+
+<style id="lx20">
+.hero-stage{position:relative;width:100%;min-height:620px}
+.wc-aura{position:absolute;left:50%;top:50%;width:90%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;filter:blur(70px);background:radial-gradient(circle,rgba(47,107,255,.22),rgba(255,16,53,.16) 50%,rgba(198,255,0,.1) 70%,transparent 75%);pointer-events:none}
+.wc{--c:#2f6bff;position:absolute;width:64%;background:#090909;border:1px solid #232323;border-radius:18px;padding:14px 16px 16px;opacity:.72;scale:.97;box-shadow:0 18px 40px -18px rgba(0,0,0,.9),0 0 34px -18px var(--c);transition:opacity .6s,scale .6s cubic-bezier(.3,.8,.2,1),border-color .6s,box-shadow .6s;animation:hsFloat 6s ease-in-out infinite}
+.wc.on{opacity:1;scale:1.03;border-color:var(--c);box-shadow:0 18px 40px -18px rgba(0,0,0,.9),0 0 0 1px var(--c),0 0 58px -6px var(--c)}
+.wc1{left:0;top:1%}.wc2{right:0;top:33%;animation-delay:-2s}.wc3{left:5%;top:66%;animation-delay:-4s}
+.wc-h{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-family:var(--head)}
+.wc-h b{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;flex:1}
+.wc-h em{font-style:normal;font-weight:700;font-size:.68rem;letter-spacing:.1em;color:var(--c);border:1px solid var(--c);border-radius:999px;padding:2px 9px}
+.wc-dot{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+/* 1. video editor */
+.wc-screen{position:relative;height:96px;border-radius:12px;background:linear-gradient(135deg,#0f1a33,#101010 70%);overflow:hidden;display:grid;place-items:center;margin-bottom:10px}
+.wc-play{position:absolute;right:12px;top:10px;width:0;height:0;border-left:14px solid rgba(255,255,255,.55);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-weight:800;font-size:1.02rem;color:#fff;background:linear-gradient(transparent,transparent);text-shadow:0 2px 0 #000,0 0 14px rgba(47,107,255,.9);opacity:0;animation:capc 6s infinite}
+.cap.c2{animation-delay:2s}.cap.c3{animation-delay:4s}
+@keyframes capc{0%{opacity:0;translate:0 8px}6%,28%{opacity:1;translate:0 0}34%,100%{opacity:0;translate:0 -6px}}
+.wc-tl{position:relative;height:50px;border-radius:10px;background:#0d0d0d;border:1px solid #1d1d1d;overflow:hidden}
+.tr{position:absolute;left:0;right:0;height:18px}.tr.t1{top:6px}.tr.t2{top:27px}
+.tr u{position:absolute;top:0;height:100%;border-radius:5px;background:linear-gradient(90deg,#2f6bff,#6d9bff)}
+.tr.t2 u{background:linear-gradient(90deg,#ffe31a,#ffcf33)}
+.ph{position:absolute;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 10px #fff;animation:ph 5s linear infinite}
+@keyframes ph{from{left:3%}to{left:97%}}
+/* 2. flashcard */
+.fc{perspective:800px;height:104px}
+.fc-in{position:relative;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,.8,.2,1)}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.fc-f{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;background:#101010;border:1px solid #262626;display:grid;place-content:center;text-align:center;gap:2px}
+.fc-b{transform:rotateY(180deg);background:linear-gradient(135deg,#2a0a10,#101010)}
+.fc-l{font-family:var(--head);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fc-f strong{font-size:1.7rem;line-height:1.2;color:#fff;text-shadow:0 0 18px var(--c)}
+.fc-f small{color:var(--c);font-weight:700}
+.fc-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}.fc-dots i{width:7px;height:7px;border-radius:50%;background:#2a2a2a;transition:.3s}.fc-dots i.on{background:var(--c);box-shadow:0 0 10px var(--c)}
+/* 3. AI prompt */
+.ai-p{display:flex;align-items:center;background:#0d0d0d;border:1px solid #232323;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;color:#e8e8e8}
+.ai-t{display:inline-block;overflow:hidden;white-space:nowrap;width:0;animation:typ 6s steps(25,end) infinite}
+@keyframes typ{0%{width:0}45%,88%{width:25ch}96%,100%{width:0}}
+.ai-c{width:2px;height:1.1em;background:var(--c);margin-left:2px;animation:blink .8s steps(1) infinite}
+.eq{display:flex;align-items:flex-end;gap:4px;height:46px;margin-bottom:12px}
+.eq i{flex:1;border-radius:3px;background:linear-gradient(to top,var(--c),#7af);height:20%;animation:eq 1s ease-in-out infinite alternate;animation-delay:calc(var(--k)*-.11s)}
+@keyframes eq{from{height:14%}to{height:100%}}
+.gp{position:relative;height:20px;border-radius:999px;background:#0d0d0d;border:1px solid #232323;overflow:hidden;font-size:.7rem;display:flex;align-items:center;padding-left:10px;color:#cfcfcf;font-weight:700}
+.gp i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(198,255,0,.55),rgba(198,255,0,.15));animation:gp 6s linear infinite}
+.gp span{position:relative}
+@keyframes gp{0%{width:0}88%{width:100%}100%{width:100%}}
+@media(max-width:900px){.hero-stage{min-height:560px;max-width:520px;margin:0 auto}.wc{width:74%}}
+@media(prefers-reduced-motion:reduce){.wc,.wc-dot,.cap,.ph,.ai-t,.ai-c,.eq i,.gp i{animation:none}.wc{opacity:1}.cap.c1{opacity:1}.ai-t{width:25ch}.gp i{width:60%}.eq i{height:60%}.fc-in{transition:none}}
+</style>
 </head>
 <body class="auth-pending">
 <div aria-hidden="true" class="ambient-bg">
@@ -1439,10 +1503,24 @@ html body .ks-scroll.ks-scroll>.rv-empty{width:100%}
 <a class="btn btn-ghost" href="#courses">Courses</a>
 </div>
 </div>
-<div class="hero-stage" id="heroStage" aria-hidden="false">
-<img class="hs-l hs-t t1" id="hsT1" alt="Content Creation + Editing course" style="--d:26" hidden>
-<img class="hs-l hs-t t2" id="hsT2" alt="French A1 course" style="--d:34" hidden>
-<img class="hs-l hs-t t3" id="hsT3" alt="AI Tools for Creators course" style="--d:20" hidden>
+<div class="hero-stage" id="heroStage" aria-hidden="true">
+<span class="wc-aura"></span>
+<div class="wc wc1 on" style="--c:#2f6bff">
+<div class="wc-h"><span class="wc-dot"></span><b>Content Creation + Editing</b><em>REC</em></div>
+<div class="wc-screen"><span class="cap c1">ಹಾಯ್ everyone!</span><span class="cap c2">Hook in 3 seconds</span><span class="cap c3">ಈಗ edit ಮಾಡೋಣ</span><span class="wc-play"></span></div>
+<div class="wc-tl"><span class="tr t1"><u style="left:4%;width:26%"></u><u style="left:34%;width:18%"></u><u style="left:56%;width:34%"></u></span><span class="tr t2"><u style="left:10%;width:40%"></u><u style="left:55%;width:22%"></u></span><span class="ph"></span></div>
+</div>
+<div class="wc wc2" style="--c:#ff3b57">
+<div class="wc-h"><span class="wc-dot"></span><b>French A1</b><em>Greetings</em></div>
+<div class="fc" id="fcard"><div class="fc-in"><div class="fc-f"><span class="fc-l">ಕನ್ನಡ</span><strong id="fk">ನಮಸ್ಕಾರ</strong></div><div class="fc-f fc-b"><span class="fc-l">Français</span><strong id="fb">Bonjour</strong><small id="fh">bon·ZHOOR</small></div></div></div>
+<div class="fc-dots"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="wc wc3" style="--c:#c6ff00">
+<div class="wc-h"><span class="wc-dot"></span><b>AI Tools</b><em>Prompt</em></div>
+<div class="ai-p"><span class="ai-t">make a Kannada song intro</span><span class="ai-c"></span></div>
+<div class="eq"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i></div>
+<div class="gp"><i></i><span>Generating…</span></div>
+</div>
 </div>
 <div class="slate-wrap" hidden>
 <div>
@@ -2596,11 +2674,25 @@ b.forEach(function(y){var on=y===x;y.classList.toggle("on",on);y.setAttribute("a
     hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();st.style.setProperty("--mx",((e.clientX-r.left)/r.width-.5)*2);st.style.setProperty("--my",((e.clientY-r.top)/r.height-.5)*2);});
     hero.addEventListener("pointerleave",function(){st.style.setProperty("--mx",0);st.style.setProperty("--my",0);});
   }
-  // rotating word
+  // widgets take turns; headline word follows the active course
   var w=document.getElementById("rotW");
-  var words=[["Content Creation","#2f6bff"],["French","#ff3b57"],["AI Tools","#c6ff00"],["Video Editing","#ffe31a"]];
+  var words=[["Content Creation","#2f6bff"],["French","#ff3b57"],["AI Tools","#c6ff00"]];
+  var cards=[].slice.call(document.querySelectorAll(".hero-stage .wc"));
+  function setWord(i){if(!w)return;var n=w.cloneNode(false);n.textContent=words[i][0];n.style.setProperty("--wc",words[i][1]);w.parentNode.style.setProperty("--wc",words[i][1]);w.parentNode.replaceChild(n,w);w=n;}
+  function activate(i){cards.forEach(function(c,k){c.classList.toggle("on",k===i);});setWord(i);}
   if(w){w.style.setProperty("--wc",words[0][1]);w.parentNode.style.setProperty("--wc",words[0][1]);
-    if(!calm){var i=0;setInterval(function(){i=(i+1)%words.length;var n=w.cloneNode(false);n.textContent=words[i][0];n.style.setProperty("--wc",words[i][1]);w.parentNode.replaceChild(n,w);w=n;},2600);}}
+    if(!calm){var ai=0;setInterval(function(){ai=(ai+1)%3;activate(ai);},4200);}}
+  var fcd=document.getElementById("fcard");
+  if(fcd&&!calm){
+    var pairs=[["ನಮಸ್ಕಾರ","Bonjour","bon·ZHOOR"],["ಧನ್ಯವಾದ","Merci","mehr·SEE"],["ಹೌದು","Oui","WEE"],["ಶುಭ ರಾತ್ರಿ","Bonne nuit","bun NWEE"]],pi=0,fl=false;
+    var dots=fcd.parentNode.querySelectorAll(".fc-dots i");
+    function mark(){[].forEach.call(dots,function(d,k){d.classList.toggle("on",k===pi);});}mark();
+    setInterval(function(){
+      if(!fl){fcd.classList.add("flip");fl=true;}
+      else{fcd.classList.remove("flip");fl=false;setTimeout(function(){pi=(pi+1)%pairs.length;
+        document.getElementById("fk").textContent=pairs[pi][0];document.getElementById("fb").textContent=pairs[pi][1];document.getElementById("fh").textContent=pairs[pi][2];mark();},650);}
+    },2100);
+  }
 })();
 </script>
 <script>
